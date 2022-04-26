@@ -1,17 +1,34 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
-
 ### Date created
-Include the date you created this project and README file.
+April 2022
 
 ### Project Title
-Replace the Project Title
+Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+Compares bike share system usage between three large US cities: Chicago, New York City, and Washington D.C.  The evaluated bike share data was provided by [Motivate](https://www.motivateco.com/).
+
+The statistics generated include these areas:
+1. Popular times of travel
+2. Popular stations and trip
+3. Trip duration
+4. User info
 
 ### Files used
-Include the files used
+A single Python script, bikeshare.py, is required for execution.  Python package dependencies include NumPy and Pandas.
+
+Three data files are used, one for each US city to be compared: Chicago, New York City, and Washington D.C.
+
+Each of the city datasets include the following data in csv format.
+* Start Time
+* End Time
+* Trip Duration
+* Start Station
+* End Station
+* User Type
+
+The Chicago and New York City datasets also include this information.
+* Gender
+* Birthyear
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Inspired by Udacity's Programming for Data Science with Python Nanodegree Program.
