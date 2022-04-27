@@ -31,4 +31,4 @@ The Chicago and New York City datasets also include this information.
 * Birthyear
 
 ### Credits
-Inspired by Udacity's Programming for Data Science with Python Nanodegree Program.
+Inspired by [Udacity's](https://www.udacity.com/) Programming for Data Science with Python Nanodegree Program.
