@@ -2,9 +2,10 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+CITY_DATA = {'chicago': 'chicago.csv',
+             'new york city': 'new_york_city.csv',
+             'washington': 'washington.csv'}
+
 
 def get_filters():
     """
@@ -89,7 +90,7 @@ def load_data(city, month, day):
     if day != 'all':
         days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
         day = days.index(day.lower())
-        
+
         # filter by day of week to create the new dataframe
         df = df[(df['day_of_week'] == day)]
 
@@ -162,7 +163,7 @@ def user_stats(df):
     # Display counts of user types
     print('User Type counts:')
     print(df['User Type'].value_counts().to_string() + '\n')
-    
+
     if 'Gender' in df.columns:
         # Display counts of gender
         print('Gender counts:')
@@ -181,6 +182,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+
 def print_raw_data(df):
     """Displays raw data based on user input."""
 
@@ -189,8 +191,8 @@ def print_raw_data(df):
         view = input('\nWould you like to view raw data? Enter yes or no.\n')
         if view.lower() != 'yes':
             break
-        
-        print(df.iloc[i:i+5,:-3])
+
+        print(df.iloc[i:i+5, :-3])
         i += 5
 
 
@@ -211,4 +213,4 @@ def main():
 
 
 if __name__ == "__main__":
-	main()
+    main()
