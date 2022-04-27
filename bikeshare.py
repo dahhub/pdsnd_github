@@ -2,9 +2,13 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+CITY_DATA = {'chicago': 'chicago.csv',
+             'new york city': 'new_york_city.csv',
+             'washington': 'washington.csv'}
+
+months = ['january', 'february', 'march', 'april', 'may', 'june']
+days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+
 
 def get_filters():
     """
@@ -30,7 +34,6 @@ def get_filters():
             print("Invalid city name. Try again.")
 
     # get user input for month (all, january, february, ... , june)
-    months = ['january', 'february', 'march', 'april', 'may', 'june']
     while True:
         month = input('Enter month (all, january, february, ... , june): ')
         month = month.lower()
@@ -40,7 +43,6 @@ def get_filters():
             print("Invalid month. Try again.")
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
-    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
     while True:
         day = input('Enter day (all, monday, tuesday, ... sunday): ')
         day = day.lower()
@@ -79,7 +81,6 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month.lower()) + 1
 
         # filter by month to create the new dataframe
@@ -87,9 +88,8 @@ def load_data(city, month, day):
 
     # filter by day of week if applicable
     if day != 'all':
-        days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
         day = days.index(day.lower())
-        
+
         # filter by day of week to create the new dataframe
         df = df[(df['day_of_week'] == day)]
 
@@ -162,7 +162,7 @@ def user_stats(df):
     # Display counts of user types
     print('User Type counts:')
     print(df['User Type'].value_counts().to_string() + '\n')
-    
+
     if 'Gender' in df.columns:
         # Display counts of gender
         print('Gender counts:')
@@ -181,6 +181,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+
 def print_raw_data(df):
     """Displays raw data based on user input."""
 
@@ -189,8 +190,8 @@ def print_raw_data(df):
         view = input('\nWould you like to view raw data? Enter yes or no.\n')
         if view.lower() != 'yes':
             break
-        
-        print(df.iloc[i:i+5,:-3])
+
+        print(df.iloc[i:i+5, :-3])
         i += 5
 
 
@@ -211,4 +212,4 @@ def main():
 
 
 if __name__ == "__main__":
-	main()
+    main()
