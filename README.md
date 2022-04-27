@@ -16,7 +16,7 @@ The statistics generated include these areas:
 ### Files used
 A single Python script, bikeshare.py, is required for execution.  Python package dependencies include NumPy and Pandas.
 
-Three data files are used, one for each US city to be compared: Chicago, New York City, and Washington D.C.
+Three data files are used, one for each US city to be compared: chicago.csv, new_york_city.csv, and washington.csv.  The data files are not included in the repository and must be obtained independently.
 
 Each of the city datasets include the following data in csv format.
 * Start Time
@@ -28,7 +28,7 @@ Each of the city datasets include the following data in csv format.
 
 The Chicago and New York City datasets also include this information.
 * Gender
-* Birthyear
+* Birth Year
 
 ### Credits
 Inspired by [Udacity's](https://www.udacity.com/) Programming for Data Science with Python Nanodegree Program.
